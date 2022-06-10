@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            the "Hello World" page
+        </title>
+		<style>
+			body * {
+    				box-sizing: border-box;
+    				cursor: pointer;
+					}
+			.btn {
+    				position: absolute;
+    				left: 50%;
+    				top: 50%;
+    				transition: 0.01s;
+				}
+		</style>
+		
+    </head>
+    <body>
+        <div class="board">
+			<button id="btn" class="btn">Hello World</button>
+		</div>
+    </body>
+	<script>
+		const random = (min, max) => {
+			const rand = min + Math.random() * (max - min + 1)
+			return Math.floor(rand)
+		}
+		const btn = document.querySelector('#btn')
+		btn.addEventListener('mouseenter', () => {
+			btn.style.left = `${random(0, 90)}%`
+			btn.style.top = `${random(0, 90)}%`
+		})
+	</script>
+</html>
